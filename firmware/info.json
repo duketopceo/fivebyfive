@@ -1,0 +1,23 @@
+{
+    "keyboard_name": "FiveByFive",
+    "url": "https://github.com/duketopceo/fivebyfive",
+    "maintainer": "LukeTopCEO",
+    "width": 5,
+    "height": 2,
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label": "K1", "x": 0, "y": 0, "matrix": [0, 0]},
+                {"label": "K2", "x": 1, "y": 0, "matrix": [0, 1]},
+                {"label": "K3", "x": 2, "y": 0, "matrix": [0, 2]},
+                {"label": "K4", "x": 3, "y": 0, "matrix": [0, 3]},
+                {"label": "K5", "x": 4, "y": 0, "matrix": [0, 4]},
+                {"label": "ENC1_BTN", "x": 0, "y": 1, "matrix": [1, 0]},
+                {"label": "ENC2_BTN", "x": 1, "y": 1, "matrix": [1, 1]},
+                {"label": "ENC3_BTN", "x": 2, "y": 1, "matrix": [1, 2]},
+                {"label": "ENC4_BTN", "x": 3, "y": 1, "matrix": [1, 3]},
+                {"label": "ENC5_BTN", "x": 4, "y": 1, "matrix": [1, 4]}
+            ]
+        }
+    }
+}

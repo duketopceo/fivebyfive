@@ -1,0 +1,25 @@
+# Build output
+*.hex
+*.bin
+*.uf2
+*.elf
+target/
+build/
+.build/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Node / Desktop v2
+node_modules/
+dist/
+
+# Local credentials
+.env
+.env.local
+*.local

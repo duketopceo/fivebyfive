@@ -1,0 +1,11 @@
+{
+  "profile_name": "Desk & Media",
+  "target_layer": 0,
+  "knobs": [
+    {"index": 0, "name": "Volume", "ccw": "KC_VOLD", "cw": "KC_VOLU", "press": "KC_MUTE"},
+    {"index": 1, "name": "Track", "ccw": "KC_MPRV", "cw": "KC_MNXT", "press": "KC_MPLY"},
+    {"index": 2, "name": "Scroll", "ccw": "KC_MS_WH_DOWN", "cw": "KC_MS_WH_UP", "press": "KC_BTN3"},
+    {"index": 3, "name": "Zoom", "ccw": "Ctrl + -", "cw": "Ctrl + +", "press": "Ctrl + 0"},
+    {"index": 4, "name": "Brightness", "ccw": "KC_BRID", "cw": "KC_BRIU", "press": "Display Sleep"}
+  ]
+}

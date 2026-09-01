@@ -1,0 +1,11 @@
+{
+  "profile_name": "Omarchy / Hyprland Compositor",
+  "target_layer": 2,
+  "knobs": [
+    {"index": 0, "name": "Workspace Focus", "ccw": "Super + Ctrl + Left", "cw": "Super + Ctrl + Right", "press": "Super + V (Float)"},
+    {"index": 1, "name": "Window Resize", "ccw": "Super + Alt + Left", "cw": "Super + Alt + Right", "press": "Super + F (Fullscreen)"},
+    {"index": 2, "name": "Active Window", "ccw": "Super + Left", "cw": "Super + Right", "press": "Super + Q (Kill)"},
+    {"index": 3, "name": "Workspace Move", "ccw": "Super + Shift + Left", "cw": "Super + Shift + Right", "press": "Super + J (Split)"},
+    {"index": 4, "name": "Hyprctl Action", "ccw": "Super + -", "cw": "Super + =", "press": "Super + Enter (Terminal)"}
+  ]
+}
