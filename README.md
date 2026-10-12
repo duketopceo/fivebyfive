@@ -60,4 +60,4 @@ Issues and PRs welcome. Keep the Vial UID unchanged, and keep encoder actions on
 - [`BlueDragonGXX/12KEMP`](https://github.com/BlueDragonGXX/12KEMP) (project anatomy), [`Squalius-cephalus/silli18`](https://github.com/Squalius-cephalus/silli18) (RP2040 encoder notes), [`TilePad/tilepad-desktop`](https://github.com/tilePad/tilepad-desktop) (future companion architecture)
 
 ## License
-Firmware: GPL-2.0 / GPL-3.0, consistent with QMK. Hardware and docs: MIT / CERN-OHL-P. See [LICENSE](LICENSE).
+Firmware: GPL-2.0 / GPL-3.0, consistent with QMK. Hardware and docs: MIT / CERN-OHL-P. The repository [LICENSE](LICENSE) file is MIT; QMK-derived firmware files carry QMK's GPL terms (licence clarification is an open item for the owner).
