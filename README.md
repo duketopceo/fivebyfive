@@ -1,56 +1,63 @@
-# FiveByFive — 5-Key + 5-Knob Macropad (RP2040 + QMK/Vial)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/wordmark-dark.svg">
+    <img alt="fivebyfive" src="assets/brand/wordmark.svg" height="52">
+  </picture>
+</p>
 
-A compact, highly-functional physical macropad featuring **5 mechanical switches** and **5 rotary encoders** (with push switches), driven by an RP2040 microcontroller and running **Vial-QMK** firmware for instant, cross-platform remapping.
+Firmware for a 5-key, 5-knob USB macropad on RP2040, built for QMK and Vial. Five layers are pre-mapped for desk, code, Hyprland, audio and video work.
 
----
+> **Status: unverified firmware.** The source has not been shown to compile or run on a board. A review of the keymap found two likely compile errors (`F8`, `F9`) and a `vial.json` outside the keymap folder; see [ROADMAP.md](ROADMAP.md). Logo is a proposal pending owner sign-off.
 
-## 📐 Project Anatomy
+## What is in the box
+- 5 mechanical switches (matrix row 0) and 5 EC11 encoders with push switches (matrix row 1), on an RP2040 (Pico, RP2040-Zero or XIAO RP2040 per [`hardware/pinout.md`](hardware/pinout.md)).
+- QMK with Vial for live remapping; encoder maps per layer; 5 dynamic-keymap layers.
 
+| Layer | Name | Keys |
+|---|---|---|
+| 0 | Desk | jump to layers 0-4 |
+| 1 | Code | format, go to definition, quick fix, terminal, git |
+| 2 | Omarchy | Hyprland workspaces 1-5 |
+| 3 | Audio | transport, record, solo, mute, loop |
+| 4 | Creator | cut, ripple delete, snapping, blade, export |
+
+Encoder rotation and press per layer: [`firmware/keymaps/vial/keymap.c`](firmware/keymaps/vial/keymap.c) and [`profiles/`](profiles/).
+
+## How it works
 ```text
-fivebyfive/
-├── .devcontainer/  # Ready-to-use container with QMK CLI & ARM GCC toolchain
-├── firmware/       # QMK + Vial keyboard definition (RP2040)
-│   ├── config.h    # Pin assignments, matrix definition, Vial UID
-│   ├── rules.mk    # RP2040 flags, ENCODER_MAP_ENABLE, VIAL_ENABLE
-│   ├── info.json   # Layout visual positioning
-│   ├── vial.json   # Real-time Vial layout & encoder configuration
-│   └── keymaps/
-│       └── vial/   # 5 default layers (Desk, Code, Omarchy, Audio, Creator)
-├── hardware/       # Pinout specs, wiring diagrams, Bill of Materials (BOM)
-├── enclosure/      # Case 3D printing specs and dimensions
-├── profiles/       # Layer presets for Desk, Coding, Omarchy/Hyprland, Audio, Video
-├── docs/           # Build guide, RP2040 UF2 flashing steps, QA checklist
-└── desktop/        # Blueprint for future v2 Tauri/Rust companion
+5 keys + 5 encoders -> RP2040 (QMK, Vial) -> USB HID keycodes and media keys -> any OS
+                                  ^
+                       vial.rocks / Vial app edits the keymap live
+```
+Encoders send standard HID and consumer-control codes, so no host daemon is needed.
+
+## Repository layout
+```text
+firmware/   QMK + Vial keyboard definition (config.h, rules.mk, info.json, vial.json, keymaps/vial)
+hardware/   pinout, wiring, BOM
+enclosure/  case notes
+profiles/   per-layer encoder presets (reference)
+docs/       build guide, flashing, QA checklist, plans, research
+desktop/    blueprint for a possible v2 companion app (not started)
+assets/brand/  logo proposal
 ```
 
----
+## Quick start
+1. Open the repo in the Dev Container (QMK CLI and ARM GCC): `devcontainer up --workspace-folder .`
+2. Build and flash following [`docs/BUILD_GUIDE.md`](docs/BUILD_GUIDE.md) and [`docs/FLASHING.md`](docs/FLASHING.md): hold BOOTSEL while plugging in USB, then copy the `.uf2` to the `RPI-RP2` drive.
+3. Remap at [vial.rocks](https://vial.rocks) in a Chromium browser, or with the Vial app.
 
-## 🚀 Quick Start
+Bring up one switch and one encoder first (Stage 1 of the build guide) before wiring all ten controls.
 
-### 1. Build Firmware with Dev Container
-Open this repository in your Dev Container (or using `@devcontainers/cli`):
+## Roadmap
+[ROADMAP.md](ROADMAP.md). Design direction: [DESIGN.md](DESIGN.md). Market notes: [docs/research/](docs/research/2026-10-10-landscape.md).
 
-```bash
-devcontainer up --workspace-folder .
-```
+## Contributing
+Issues and PRs welcome. Keep the Vial UID unchanged, and keep encoder actions on standard HID keycodes. See [AGENTS.md](AGENTS.md).
 
-### 2. Flash RP2040
-1. Hold **BOOTSEL** while plugging the USB cable into the RP2040.
-2. Drag and drop the compiled `.uf2` binary into the `RPI-RP2` drive.
+## Acknowledgments
+- [`vial-kb/vial-qmk`](https://github.com/vial-kb/vial-qmk), [`qmk/qmk_firmware`](https://github.com/qmk/qmk_firmware)
+- [`BlueDragonGXX/12KEMP`](https://github.com/BlueDragonGXX/12KEMP) (project anatomy), [`Squalius-cephalus/silli18`](https://github.com/Squalius-cephalus/silli18) (RP2040 encoder notes), [`TilePad/tilepad-desktop`](https://github.com/tilePad/tilepad-desktop) (future companion architecture)
 
-### 3. Configure via Vial
-Open [https://vial.rocks](https://vial.rocks) in any Chromium browser or launch the Vial app to remap keys and rotary actions in real time.
-
----
-
-## 📚 Acknowledgments & References
-- [`vial-kb/vial-qmk`](https://github.com/vial-kb/vial-qmk) — Live remapping, layers, macros, and encoder maps.
-- [`qmk/qmk_firmware`](https://github.com/qmk/qmk_firmware) — Canonical QMK keyboard firmware.
-- [`BlueDragonGXX/12KEMP`](https://github.com/BlueDragonGXX/12KEMP) — Macropad structure and project anatomy reference.
-- [`Squalius-cephalus/silli18`](https://github.com/Squalius-cephalus/silli18) — RP2040 rotary encoder implementation notes.
-- [`TilePad/tilepad-desktop`](https://github.com/tilePad/tilepad-desktop) — Architecture reference for future v2 Tauri/Rust desktop companion.
-
----
-
-## 📄 License
-Firmware portions are licensed under **GPL-2.0 / GPL-3.0** consistent with QMK. Hardware and documentation are licensed under **MIT / CERN-OHL-P**.
+## License
+Firmware: GPL-2.0 / GPL-3.0, consistent with QMK. Hardware and docs: MIT / CERN-OHL-P. See [LICENSE](LICENSE).
