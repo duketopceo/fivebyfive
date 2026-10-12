@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 52" width="64" height="52" role="img" aria-label="FiveByFive mark">
+  <defs><mask id="n0"><rect width="64" height="52" fill="#fff"/><line x1="8.0" y1="40" x2="8.0" y2="37.4" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></mask><mask id="n1"><rect width="64" height="52" fill="#fff"/><line x1="20.0" y1="40" x2="20.0" y2="37.4" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></mask><mask id="n2"><rect width="64" height="52" fill="#fff"/><line x1="32.0" y1="40" x2="32.0" y2="37.4" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></mask><mask id="n3"><rect width="64" height="52" fill="#fff"/><line x1="44.0" y1="40" x2="44.0" y2="37.4" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></mask><mask id="n4"><rect width="64" height="52" fill="#fff"/><line x1="56.0" y1="40" x2="56.0" y2="37.4" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></mask></defs>
+  <rect x="3.5" y="12" width="9" height="9" rx="2" fill="#E8E6E1"/>
+  <circle cx="8.0" cy="40" r="4.8" fill="#E8E6E1" mask="url(#n0)"/>
+  <rect x="15.5" y="12" width="9" height="9" rx="2" fill="#E8E6E1"/>
+  <circle cx="20.0" cy="40" r="4.8" fill="#E8E6E1" mask="url(#n1)"/>
+  <rect x="27.5" y="12" width="9" height="9" rx="2" fill="#E8E6E1"/>
+  <circle cx="32.0" cy="40" r="4.8" fill="#E8E6E1" mask="url(#n2)"/>
+  <rect x="39.5" y="12" width="9" height="9" rx="2" fill="#E8E6E1"/>
+  <circle cx="44.0" cy="40" r="4.8" fill="#E8E6E1" mask="url(#n3)"/>
+  <rect x="51.5" y="12" width="9" height="9" rx="2" fill="#E8E6E1"/>
+  <circle cx="56.0" cy="40" r="4.8" fill="#E8E6E1" mask="url(#n4)"/>
+  <line x1="32" y1="40" x2="32" y2="37.4" stroke="#FFB454" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
